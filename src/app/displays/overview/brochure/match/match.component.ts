@@ -41,12 +41,12 @@ export class MatchComponent implements OnInit {
     let cartsTwo = this.colors.map(color => ({ kind: color, up: false, found: false }));
 
     this.cards = [...cardsOne, ...cartsTwo]; // double the cards
-    console.log(this.cards);
+
 
     for (let moment in this.moments) {
       this.overlays.push({ kind: moment, shown: false });
     }
-    console.log(this.overlays);
+
 
     this.toggleOverlay(true, this.moments.start);
 
@@ -95,7 +95,6 @@ export class MatchComponent implements OnInit {
     this.flipCount = 0;
     // clean plate
 
-    console.log(this.cards);
 
     setTimeout(() => { this.startCountdown(); }, 500);
   }
@@ -124,7 +123,7 @@ export class MatchComponent implements OnInit {
 
 
   gameOver(result: string) {
-    console.log(typeof this.timer); // number
+
 
     clearInterval(this.timer);
     this.toggleOverlay(true, result);
@@ -132,8 +131,7 @@ export class MatchComponent implements OnInit {
 
 
   runCard(card: Card, index: number) {
-    console.log(this.isBusy);
-    console.log(this.cardToCheck);
+
 
     if (
       // card can be flipped under conditions below
@@ -161,22 +159,12 @@ export class MatchComponent implements OnInit {
   }
 
   isMatch(card: Card) {
-    console.log('match');
+
     this.isBusy = true;
-
-
-    console.log('this.cardToCheck');
-    console.log(this.cardToCheck);
-
     this.cardsMatched.push(card, this.cardToCheck);
 
     // this.cardToCheck.found = true;
     // this.cardToCheck = null;
-
-
-
-    console.log('this.cardToCheck');
-    console.log(this.cardToCheck);
 
 
     setTimeout(() => {
@@ -199,11 +187,8 @@ export class MatchComponent implements OnInit {
   }
 
   isMix(card: Card) {
-    console.log('mix');
-    this.isBusy = true;
 
-    console.log('this.cardToCheck');
-    console.log(this.cardToCheck);
+    this.isBusy = true;
 
     setTimeout(() => {
       this.isBusy = false;
@@ -213,8 +198,7 @@ export class MatchComponent implements OnInit {
 
     }, 500);
 
-    console.log('this.cardToCheck');
-    console.log(this.cardToCheck);
+
   }
 
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { BrochureComponent } from './brochure.component';
 import { BrochureRoutingModule } from './brochure-routing.module';
@@ -27,9 +27,12 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   imports: [
     CommonModule,
     BrochureRoutingModule,
-    // FormsModule,
+
     ReactiveFormsModule,
-    DragDropModule
+    DragDropModule,
+
+
+
   ]
 })
 export class BrochureModule { }

@@ -1,6 +1,16 @@
 <div id="brochure">
    <app-navigation></app-navigation>
+   <div id="pagination">
+      <span class="material-icons" (click)="toPrev()">
+         navigate_before
+      </span>
+      <span class="material-icons" (click)="toNext()">
+         navigate_next
+      </span>
+   </div>
    <div class="container">
-      <router-outlet></router-outlet>
+      <div [@routeAnimations]="prepareRoute(outlet)">
+         <router-outlet #outlet="outlet"></router-outlet>
+      </div>
    </div>
 </div>
