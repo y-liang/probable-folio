@@ -10,6 +10,7 @@ export class ArchitectureComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.location.href = 'https://architecture.yliang.net/';
   }
 
 }

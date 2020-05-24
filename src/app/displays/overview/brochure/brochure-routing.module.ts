@@ -14,7 +14,10 @@ const routes: Routes = [
       { path: 'match', component: MatchComponent },
       { path: 'preference', component: PreferenceComponent },
       { path: 'readability', component: ReadabilityComponent },
-      { path: 'signature', component: SignatureComponent }
+      { path: 'signature', component: SignatureComponent },
+
+      { path: '', redirectTo: 'preference', pathMatch: 'full' },
+
     ]
   }
 ];

@@ -1,0 +1,173 @@
+@import (css) url(https://fonts.googleapis.com/css?family=Allerta+Stencil|Montserrat|Josefin+Sans:300,400,500,600,700|Muli&display=swap);
+
+@font-title: "Josefin Sans",
+   "Montserrat",
+   "Muli",
+   "Segoe UI",
+   Tahoma,
+   Verdana,
+   sans-serif;
+@font-body: "Montserrat",
+   "Muli",
+   "Segoe UI",
+   Tahoma,
+   Verdana,
+   sans-serif;
+
+@color-blurple: rgb(55, 55, 255);
+@color-blank: rgb(250, 250, 255);
+@color-lighter: rgb(225, 235, 255);
+@color-light: rgb(165, 174, 201);
+@color-medium: rgb(123, 133, 165);
+@color-dark: rgb(30, 30, 40);
+@color-darker: rgb(20, 20, 30);
+
+@color-yellower: rgb(255, 166, 0);
+@color-yellow: rgb(255, 208, 26);
+@color-green: rgb(0, 224, 167);
+@color-greener: rgb(40, 104, 89);
+@color-pink: rgb(250, 78, 137);
+
+// @padding-page: 72px 0 96px 0;
+@padding-page: 10vh 0;
+
+.page-setup {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   font-family: @font-title;
+   font-size: 24px;
+   color: @color-darker;
+
+   min-height: 80vh;
+
+   padding: @padding-page;
+}
+
+.title {
+   color: @color-blank;
+   text-transform: capitalize;
+   font-size: 36px;
+
+   margin: 36px 0 12px 0;
+}
+
+.button {
+   padding: 9px;
+   background-color: @color-blank;
+   font-family: @font-title;
+   font-size: 18px;
+   margin: 12px;
+   outline: none;
+   border: none;
+
+   &:not(:disabled) {
+      border: 1px solid @color-darker;
+      cursor: pointer;
+
+      &:hover {
+         background-color: @color-darker;
+         color: @color-blank;
+         transition: 0.3s ease all;
+      }
+   }
+}
+
+// <div class="input-group">
+//    <input required> or <textarea required>
+//    <span></span>
+//    <label></label>
+// </div>
+
+.input-group {
+   position: relative;
+   margin-bottom: 36px;
+   box-sizing: border-box;
+
+   input,
+   textarea {
+      font-size: 18px;
+      box-sizing: border-box;
+      padding: 9px;
+      display: block;
+      width: 300px;
+      border: none;
+      border-bottom: 1px solid @color-darker;
+
+      &:focus {
+         outline: none;
+      }
+
+      &:focus~label,
+      &:valid~label {
+         top: -21px;
+         font-size: 18px;
+         color: @color-dark;
+      }
+   }
+
+   label {
+      color: @color-darker;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 0.2s ease all;
+   }
+
+   span {
+      position: relative;
+      display: block;
+      width: 300px;
+
+      &::before {
+         left: 50%;
+      }
+
+      &::before,
+      &::after {
+         content: "";
+         height: 2px;
+         width: 0;
+         bottom: 1px;
+         position: absolute;
+         background: @color-darker;
+         transition: 0.2s ease all;
+      }
+
+      &::before {
+         left: 50%;
+      }
+
+      &::after {
+         right: 50%;
+      }
+   }
+
+   input:focus~span:before,
+   input:focus~span:after {
+      width: 50%;
+   }
+}
+
+.description {
+   margin-top: 36px;
+
+   details {
+      max-width: 600px;
+
+      summary {
+         cursor: pointer;
+
+      }
+
+      p {
+         font-family: @font-body;
+         font-size: 18px;
+         cursor: default;
+      }
+   }
+}

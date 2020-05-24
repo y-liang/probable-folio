@@ -9,6 +9,7 @@ import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 import { IntroComponent } from './intro/intro.component';
 import { OutroComponent } from './outro/outro.component';
 import { MosaicComponent } from './mosaic/mosaic.component';
+import { BrochureComponent } from './brochure/brochure.component';
 
 
 
@@ -21,7 +22,6 @@ import { MosaicComponent } from './mosaic/mosaic.component';
     IntroComponent,
     OutroComponent,
     MosaicComponent,
-
 
   ],
   imports: [

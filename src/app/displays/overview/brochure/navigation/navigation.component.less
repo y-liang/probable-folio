@@ -1,10 +1,11 @@
-@import '../../../../assets/styles/variables.less';
+@import '../../../../../assets/styles/variables.less';
 
-#left-bar {
-
+#navigation {
    position: fixed;
    background-color: @color-yellow;
    z-index: 999;
+
+   margin-top: 10rem;
 }
 
 
@@ -30,7 +31,7 @@ ul {
          align-items: center;
          height: 5rem;
          text-decoration: none;
-         filter: grayscale(100%) opacity(0.9);
+         filter: grayscale(100%) opacity(1);
          transition: filter 0.3s ease;
 
 
@@ -81,10 +82,10 @@ ul {
 /* large screen */
 @media only screen and (min-width: 600px) {
 
-   #left-bar {
-      top: 0;
+   #navigation {
+      // top: 0;
       width: 5rem;
-      height: 100vh;
+      // height: 100vh;
 
       transition: width 0.3s ease;
 
@@ -110,8 +111,8 @@ ul {
 
 /* small screen */
 @media only screen and (max-width: 600px) {
-   #left-bar {
-      bottom: 0;
+   #navigation {
+      // bottom: 0;
       width: 100vw;
       height: 5rem;
 
