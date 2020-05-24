@@ -1,1 +1,39 @@
-<p>readability works!</p>
+<div id="readability" class="page-setup">
+
+
+   <div class="title">
+      Reading Level
+   </div>
+
+   <div id="note">
+      <textarea #inputText (keyup)="autoGrow()" placeholder="enter your reading material here..."></textarea>
+   </div>
+
+   <div id="buttons">
+      <button class="button" (click)="getGrade(inputText.value)" [disabled]="!inputText.value">
+         compute
+      </button>
+
+      <button class="button" (click)="inputText.value=''; autoGrow()">
+         clear
+      </button>
+   </div>
+
+   <div id="grade">
+      <h2>Reading Level:</h2>
+      <span>{{gradeLevel}}</span>
+   </div>
+
+   <div class="description">
+      <details>
+         <summary>how it works?</summary>
+         <p>
+            Ever wonder approximately what grade level is needed to comprehend a given text?
+            You can analyze your reading material here with Coleman-Liau index.
+         </p>
+      </details>
+   </div>
+
+
+
+</div>

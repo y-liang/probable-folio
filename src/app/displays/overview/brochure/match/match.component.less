@@ -1,0 +1,342 @@
+@import '../../../../../assets/styles/variables.less';
+
+#match {
+   background-color: @color-yellow;
+}
+
+#overlays {
+   .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      /* for restart text to center */
+      z-index: 1;
+      color: @color-lighter;
+      font-family: @font-title;
+      font-size: 120px;
+      transform: scale(0);
+      cursor: default;
+   }
+
+   .overlay.visible {
+      transform: scale(1);
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out 0.3s;
+   }
+}
+
+#board {
+   display: flex;
+   flex-direction: column;
+
+   #counts {
+      display: flex;
+      /*flex sed inside the grid*/
+      justify-content: space-evenly;
+
+      font-size: 24px;
+      margin: 48px 0 24px 0;
+   }
+}
+
+#cards {
+   display: grid;
+   grid-template-columns: repeat(4, auto);
+   grid-gap: 18px;
+   margin: 36px 0 36px 0;
+   justify-content: center;
+   /*center all the cards, x the main axis*/
+
+   perspective: 750px;
+}
+
+/*the user is 750px away from the container, when transition it has perspective*/
+.card {
+   position: relative;
+   width: 96px;
+   height: 96px;
+
+   &:hover {
+      cursor: pointer;
+   }
+
+   &.matched {
+      animation: shake 0.2s;
+      animation-iteration-count: 2;
+
+      span {
+         animation: shake 0.2s;
+         animation-iteration-count: 8;
+      }
+   }
+
+   .card-face {
+      position: absolute;
+      /*to have both card face and card back in the same position, overlap*/
+      width: 100%;
+      height: 100%;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // overflow: hidden; /*hide the spider tail on the y, and the spider web on the x when enlarging*/
+      backface-visibility: hidden;
+      /*hide the back side*/
+      border-radius: 9px;
+      border: 3px solid @color-dark;
+      transition: transform 0.5s ease-in-out;
+   }
+
+   .card-face.card-back {
+      background-color: black;
+   }
+
+   .card-face.card-front {
+      transform: rotateY(180deg);
+      /*when start, this is the back*/
+   }
+}
+
+/* flipping the card by adding or removing the .visible class on the card */
+.card.visible .card-back {
+   transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+   transform: rotateY(0);
+}
+
+.card.red .card-face.card-front {
+   span {
+      background-color: @color-dark;
+
+      height: 10px;
+      border-radius: 5px;
+      width: 24px;
+      float: left;
+      margin: 24px 0 0 12px;
+
+      &::before {
+         content: "";
+         display: block;
+         background-color: @color-dark;
+         height: 8px;
+         border-radius: 50%;
+         width: 8px;
+         margin: -4px 0 0 3px;
+      }
+
+      &::after {
+         content: "";
+         display: block;
+         background-color: @color-dark;
+         height: 12px;
+         border-radius: 50%;
+         width: 12px;
+         margin: -7px 0 0 9px;
+      }
+   }
+}
+
+.card.orange .card-face.card-front {
+   span {
+      background-color: @color-yellow;
+
+      border: 3px solid @color-dark;
+      height: 8px;
+      border-radius: 50%;
+      width: 8px;
+      float: left;
+      margin: 17px 0px 0px 18px;
+
+      &::after {
+         content: "";
+         display: block;
+         background-color: @color-dark;
+         transform: rotate(45deg);
+         height: 4px;
+         border-radius: 2px;
+         width: 6px;
+         margin: 8px 0px 0px 7px;
+      }
+   }
+}
+
+.card.yellow .card-face.card-front {
+   span {
+      display: block;
+      background-color: @color-dark;
+
+      width: 16px;
+      height: 16px;
+      border-radius: 50% 50% 50% 0;
+      // background-color: @color-darker;
+      transform: rotate(-45deg);
+      left: 50%;
+      top: 50%;
+      margin: 16px 0 0 16px;
+
+      &::after {
+         content: "";
+         display: block;
+         width: 8px;
+         height: 8px;
+         position: absolute;
+         margin: 4px 0 0 4px;
+         background-color: @color-yellow;
+         border-radius: 50%;
+      }
+   }
+}
+
+.card.green .card-face.card-front {
+   span {
+      display: block;
+
+      width: 15px;
+      height: 2px;
+      background-color: @color-dark;
+      margin: 24px 0px 0px 12px;
+      box-shadow: 0px 4px 0px @color-dark, 0px -4px 0px @color-dark;
+   }
+}
+
+.card.cyan .card-face.card-front {
+   span {
+      display: block;
+      width: 16px;
+      height: 16px;
+      border: 3px dotted @color-dark;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 3px @color-dark;
+      margin: 16px 0 0 15px;
+   }
+}
+
+.card.blue .card-face.card-front {
+   span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      border: solid 2px @color-dark;
+      border-right: solid 1px transparent;
+      border-top: solid 1px transparent;
+      transform: rotate(45deg);
+      margin: 20px 0 0 21px;
+
+      &::before {
+         content: "";
+         display: block;
+         width: 6px;
+         height: 6px;
+         margin: 6px 0 0 -4px;
+         background-color: @color-dark;
+         border-radius: 50%;
+         box-shadow: 10px 0px 0 @color-dark, 0px -10px 0 @color-dark;
+      }
+   }
+}
+
+.card.purple .card-face.card-front {
+   span {
+      display: block;
+      position: absolute;
+      width: 6px;
+      height: 8px;
+      border: 2px solid @color-dark;
+      border-top: solid 0em transparent;
+      border-radius: 0 0 6px 6px;
+      margin: 24px 0 0 15px;
+      transform: rotate(45deg);
+
+      &::before {
+         content: "";
+         display: block;
+
+         width: 6px;
+         height: 8px;
+         border: 2px solid @color-dark;
+         border-bottom: solid 0em transparent;
+         border-radius: 6px 6px 0 0;
+         margin: -14px 0 0 -2px;
+      }
+
+      &::after {
+         content: "";
+         display: block;
+
+         width: 2px;
+         height: 10px;
+         background-color: @color-dark;
+         border-radius: 1px;
+         margin: -7px 0px 0px 2px;
+      }
+   }
+}
+
+.card.grey .card-face.card-front {
+   span {
+      display: block;
+
+      width: 4px;
+      height: 4px;
+      border: 4px solid @color-dark;
+      border-radius: 50%;
+      margin: 18px 0 0 12px;
+
+      &::after {
+         content: "";
+         display: block;
+
+         width: 18px;
+         height: 4px;
+         border-radius: 0px 0px 4px 0px;
+         // border-bottom: 2px dotted @color-dark;
+         background: @color-dark;
+         margin: 0px 0 0 7px;
+      }
+   }
+}
+
+
+@keyframes shake {
+   0% {
+      transform: rotate(-5deg);
+   }
+
+   50% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(5deg);
+   }
+}
+
+@media only screen and (max-width: 630px) {
+   #memory {
+      #overlays {
+         .overlay {
+            font-size: 96px;
+         }
+      }
+
+      #board {
+         #cards {
+            grid-gap: 9px;
+
+            .card {
+               width: 48px;
+               height: 48px;
+            }
+         }
+      }
+   }
+}

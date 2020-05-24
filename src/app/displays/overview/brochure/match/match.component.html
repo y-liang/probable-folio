@@ -1,1 +1,41 @@
-<p>match works!</p>
+<div id="match" class="page-setup">
+
+   <div id="overlays">
+      <div *ngFor="let overlay of overlays" [ngClass]="{'overlay': true, 'visible': overlay.shown}"
+         (click)="toggleOverlay(false, overlay.kind)">
+         <span>{{overlay.kind}}</span>
+         <span *ngIf="overlay.kind != 'start'">restart</span>
+      </div>
+   </div>
+
+   <div class="title">
+      mix match
+   </div>
+
+   <div id="board">
+      <div id="counts">
+         <div>time <span>{{timeLeft}}</span></div>
+         <div>flip <span>{{flipCount}}</span></div>
+      </div>
+
+      <div id="cards">
+         <div *ngFor="let card of cards; index as i" [ngClass]="setCardClass(card)" (click)="runCard(card, i)">
+            <div class="card-face card-front"><span></span></div>
+            <div class="card-face card-back"></div>
+         </div>
+      </div>
+
+   </div>
+
+   <div class="description">
+      <details>
+         <summary>how it works?</summary>
+         <!-- <p>numeric substitution cipher</p>
+         <p>To conceal a message in a reversible way, we use a key: either numeric or alphabetical. In the case of a numeric key, it encrypts confidential messages by shifting each letter therein by some number of places. In the case of a alphabetical key, we encrypt a message by replacing every letter with another letter..</p> -->
+      </details>
+   </div>
+
+</div>
+
+
+<!-- [ngClass]="'card' + ' ' + card.kind + ' ' + {'visible': card.up, 'matched': card.found}" -->

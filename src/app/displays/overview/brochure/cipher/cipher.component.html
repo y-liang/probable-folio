@@ -1,1 +1,90 @@
-<p>cipher works!</p>
+<div id="cipher" class="page-setup">
+
+   <div class="title">
+      substitution cipher
+   </div>
+
+   <form id="form-wrapper" [formGroup]="mainForm" (ngSubmit)="computeNow(keyFC.value, inputTextFC.value)" #f="ngForm">
+
+      <div id="form-selections">
+
+         <div class="selection">
+            <label for="sub-type">key type</label>
+            <div class="radio" *ngFor="let type of substitutionTypes">
+               <input type="radio" formControlName="subTypeFC" [value]="type">
+               {{type}}
+            </div>
+
+            <!-- <select formControlName="subTypeFC" id="sub-type" class="form-control">
+               <option *ngFor="let type of substitutionTypes" [value]="type">{{type}}</option>
+            </select> -->
+         </div>
+
+
+         <div class="selection">
+            <label for="tra-type">substitution type</label>
+            <div class="radio" *ngFor="let type of translationTypes">
+               <input type="radio" formControlName="traTypeFC" [value]="type">
+               {{type}}
+            </div>
+
+            <!-- <select formControlName="traTypeFC" id="tra-type" class="form-control">
+               <option *ngFor="let type of translationTypes" [value]="type">{{type}}</option>
+            </select> -->
+         </div>
+      </div>
+
+      <div id="form-buttons">
+         <button type="reset" class="button" (click)="resetOutput()">reset</button>
+         <button type="submit" class="button" [disabled]="mainForm.invalid">{{traTypeFC.value}}</button>
+      </div>
+
+      <div id="form-inputs">
+         <div class="form-input input-group">
+            <input formControlName="keyFC" type="text" required>
+            <span></span>
+            <label>enter a {{subTypeFC.value}} key</label>
+
+
+            <div *ngIf="subTypeFC.value == substitutionTypes[1] && traTypeFC.value == translationTypes[0]">
+               <button (click)="generateKey()" id="gen-key" class="button">generate a key</button>
+            </div>
+
+            <!-- <div *ngIf="mainForm.invalid && f.submitted" class="alert">
+               <div *ngIf="mainForm.errors?.invalidNumKey">
+                  Invalid key. Your key has to be numeric.
+               </div>
+               <div *ngIf="mainForm.errors?.invalidAlphKey" class="alert">
+                  Invalid key. Your key has to be alphabetical and unique 26 charaters.
+               </div>
+            </div> -->
+
+         </div>
+
+
+         <div class="form-input input-group">
+            <textarea formControlName="inputTextFC" id="a-text" class="form-control" required></textarea>
+            <span></span>
+            <label>enter here a text to {{traTypeFC.value}}</label>
+         </div>
+      </div>
+
+
+      <div id="output" *ngIf="outputText">
+         <label>{{traTypeFC.value}}ed text </label>
+         <div>{{outputText}}</div>
+      </div>
+
+   </form>
+
+
+   <div class="description">
+      <details>
+         <summary>how it works?</summary>
+         <p>To conceal a message in a reversible way, we use a key: either numeric or alphabetical. In the case of a
+            numeric key, it encrypts confidential messages by shifting each letter therein by some number of places. In
+            the case of a alphabetical key, we encrypt a message by replacing every letter with another letter..</p>
+      </details>
+   </div>
+
+</div>

@@ -6,12 +6,12 @@ const routes: Routes = [
   {
     path: '', component: OverviewComponent, children: [
       {
-        path: 'brochure',
+        path: 'sandbox',
         loadChildren: () => import(`./brochure/brochure.module`).then(m => m.BrochureModule)
       },
 
 
-      { path: '', redirectTo: 'brochure', pathMatch: 'full' },
+      { path: '', redirectTo: 'sandbox', pathMatch: 'full' },
 
     ]
   },

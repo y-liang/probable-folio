@@ -1,5 +1,5 @@
-<div id="preference">
-   <div id="title">
+<div id="preference" class="page-setup">
+   <div class="title">
       preference polling
    </div>
 
@@ -109,8 +109,8 @@
       </div>
 
       <div id="form-buttons">
-         <button type="reset" (click)="clearFields()">reset</button>
-         <button type="submit" [disabled]="!isReady" (click)="formSubmitted()">submit</button>
+         <button type="reset" class="button" (click)="clearFields()">reset</button>
+         <button type="submit" class="button" [disabled]="!isReady" (click)="formSubmitted()">submit</button>
       </div>
 
       <div id="result" *ngIf="isSubmitted">
@@ -136,7 +136,7 @@
 
 
 
-   <div id="description">
+   <div class="description">
       <details>
          <summary>how it works?</summary>
          <!-- <p>numeric substitution cipher</p>
