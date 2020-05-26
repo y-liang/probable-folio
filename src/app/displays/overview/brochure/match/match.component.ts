@@ -18,7 +18,9 @@ interface Overlay {
 export class MatchComponent implements OnInit {
   // colors = ['red', 'orange', 'yellow'];
 
-  colors = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'grey'];
+  // colors = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'grey'];
+  colors = ['emoji_nature', 'emoji_symbols', 'outdoor_grill', 'deck', 'cake', 'emoji_food_beverage', 'hot_tub', 'two_wheeler'];
+
   moments = { start: 'start', loss: 'loss', win: 'win' };
 
   cards: Card[] = [];

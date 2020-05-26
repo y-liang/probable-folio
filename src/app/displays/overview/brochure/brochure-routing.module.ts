@@ -6,6 +6,7 @@ import { MatchComponent } from './match/match.component';
 import { PreferenceComponent } from './preference/preference.component';
 import { ReadabilityComponent } from './readability/readability.component';
 import { SignatureComponent } from './signature/signature.component';
+import { FacadeComponent } from './facade/facade.component';
 
 const routes: Routes = [
   {
@@ -15,8 +16,9 @@ const routes: Routes = [
       { path: 'preference', component: PreferenceComponent },
       { path: 'readability', component: ReadabilityComponent },
       { path: 'signature', component: SignatureComponent },
+      { path: 'cover', component: FacadeComponent },
 
-      { path: '', redirectTo: 'preference', pathMatch: 'full' },
+      { path: '', redirectTo: 'cover', pathMatch: 'full' },
 
     ]
   }

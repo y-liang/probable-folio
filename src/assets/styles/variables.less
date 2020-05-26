@@ -1,5 +1,12 @@
 @import (css) url(https://fonts.googleapis.com/css?family=Allerta+Stencil|Montserrat|Josefin+Sans:300,400,500,600,700|Muli&display=swap);
 
+@desktop: ~"only screen and (min-width: 720px)";
+@mobile: ~"only screen and (max-width: 720px)";
+
+// @desktop: ~"only screen and (min-width: 960px)";
+// @tablet: ~"only screen and (min-width: 720px) and (max-width: 959px)";
+// @mobile: ~"only screen and (max-width: 719px)";
+
 @font-title: "Josefin Sans",
    "Montserrat",
    "Muli",
@@ -28,7 +35,6 @@
 @color-greener: rgb(40, 104, 89);
 @color-pink: rgb(250, 78, 137);
 
-// @padding-page: 72px 0 96px 0;
 @padding-page: 10vh 0;
 
 .page-setup {
@@ -42,7 +48,6 @@
 
    min-height: 80vh;
 
-   padding: @padding-page;
 }
 
 .title {

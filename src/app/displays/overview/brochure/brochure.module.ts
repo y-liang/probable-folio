@@ -11,6 +11,7 @@ import { CipherComponent } from './cipher/cipher.component';
 import { MatchComponent } from './match/match.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FacadeComponent } from './facade/facade.component';
 
 
 
@@ -23,6 +24,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     CipherComponent,
     MatchComponent,
     NavigationComponent,
+    FacadeComponent,
   ],
   imports: [
     CommonModule,

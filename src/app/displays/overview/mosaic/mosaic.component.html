@@ -1,1 +1,31 @@
-<p>mosaic works!</p>
+<div id="mosaic">
+   <div [id]="mode" class="container">
+      <div class="stars">
+         <div class="small"></div>
+         <div class="medium"></div>
+         <div class="big"></div>
+      </div>
+
+      <div id="switch">
+         <div id="toggle" [class]="mode" (click)="toggleMode()"></div>
+      </div>
+      <div id="board">
+         <div class="card" [id]="'card-' + project.id" *ngFor="let project of projects">
+            <div class="project">
+               <a routerLink="/{{project.route}}"></a>
+               <span class="project-name">{{project.name.split("-").join(" ")}}</span>
+               <div class="project-description">{{project.description}}</div>
+            </div>
+         </div>
+
+         <div id="card-z">
+            <span>hi there, welcome!</span>
+         </div>
+
+      </div>
+
+
+   </div>
+
+
+</div>

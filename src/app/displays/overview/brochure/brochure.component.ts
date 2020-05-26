@@ -10,10 +10,13 @@ import { slideInAnimation } from 'src/app/supplies/animations/router-animations'
 })
 export class BrochureComponent implements OnInit {
 
-  offRoutes: string[] = ['cipher', 'match', 'preference', 'readability', 'signature'];
-
   currentRoute: string;
   currentIndex: number;
+
+  offRoutes: string[] = ['cipher', 'match', 'preference', 'readability', 'signature', 'cover'];
+  icons: string[] = ['gradient', 'widgets', 'assessment', 'menu_book', 'gesture', 'extension'];
+  icon;
+
 
 
   constructor(private router: Router) { }
@@ -21,7 +24,10 @@ export class BrochureComponent implements OnInit {
   ngOnInit() {
     this.currentRoute = this.router.url.substring(18);
     this.currentIndex = this.offRoutes.findIndex(element => element == this.currentRoute);
+
+    this.icon = this.icons[this.currentIndex];
   }
+
 
 
   prepareRoute(outlet: RouterOutlet) {
@@ -32,27 +38,28 @@ export class BrochureComponent implements OnInit {
   toPrev() {
     let prevIndex;
     if (this.currentIndex == 0) {
-      prevIndex = 4;
+      prevIndex = 5;
     } else {
       prevIndex = this.currentIndex - 1;
     }
 
     this.currentIndex = prevIndex;
     // console.log(prevIndex);
+    this.icon = this.icons[this.currentIndex];
 
     this.router.navigateByUrl(`/overview/sandbox/${this.offRoutes[prevIndex]}`);
   }
 
   toNext() {
     let nextIndex;
-    if (this.currentIndex == 4) {
+    if (this.currentIndex == 5) {
       nextIndex = 0;
     } else {
       nextIndex = this.currentIndex + 1;
     }
 
     this.currentIndex = nextIndex;
-
+    this.icon = this.icons[this.currentIndex];
     // console.log(nextIndex);
 
     this.router.navigateByUrl(`/overview/sandbox/${this.offRoutes[nextIndex]}`);

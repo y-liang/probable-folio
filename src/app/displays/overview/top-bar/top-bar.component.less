@@ -43,8 +43,12 @@
 
 .menu input {
    position: absolute;
-   top: 0%;
+   top: -1%;
    left: 50%;
+   transform: translate(-50%, 0);
+
+   margin: 0;
+
    width: 80px;
    height: 80px;
    z-index: 20;
@@ -57,10 +61,12 @@
    position: absolute;
    top: -1%;
    left: 50%;
+   transform: translate(-50%, 0);
+
    width: 80px;
    height: 80px;
    background-color: @color-blurple;
-   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+   // box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
    border-radius: 100%;
    z-index: 10;
    cursor: pointer;
@@ -111,6 +117,9 @@
    position: absolute;
    top: 4.5%;
    left: 25%;
+
+   transform: translate(-50%, 0);
+
    width: 380px;
    height: 60px;
    background-color: @color-blank;

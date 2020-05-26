@@ -1,17 +1,19 @@
 @import '../../../../../assets/styles/variables.less';
 
 #match {
-   background-color: @color-yellow;
+   background-color: @color-green;
+   position: relative;
 }
 
 #overlays {
+
+
    .overlay {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
-
 
       display: flex;
       justify-content: center;
@@ -43,7 +45,7 @@
       justify-content: space-evenly;
 
       font-size: 24px;
-      margin: 48px 0 24px 0;
+      margin: 24px 0 48px 0;
    }
 }
 
@@ -78,40 +80,49 @@
       }
    }
 
-   .card-face {
-      position: absolute;
-      /*to have both card face and card back in the same position, overlap*/
-      width: 100%;
-      height: 100%;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-      // overflow: hidden; /*hide the spider tail on the y, and the spider web on the x when enlarging*/
-      backface-visibility: hidden;
-      /*hide the back side*/
-      border-radius: 9px;
-      border: 3px solid @color-dark;
-      transition: transform 0.5s ease-in-out;
+   /* flipping the card by adding or removing the .visible class on the card */
+   &.visible .card-back {
+      transform: rotateY(-180deg);
    }
 
-   .card-face.card-back {
-      background-color: black;
+   &.visible .card-front {
+      transform: rotateY(0);
+   }
+}
+
+.card-face {
+   position: absolute;
+   /*to have both card face and card back in the same position, overlap*/
+   width: 100%;
+   height: 100%;
+
+   backface-visibility: hidden;
+   /*hide the back side*/
+
+   border-radius: 9px;
+   border: 3px solid @color-dark;
+   transition: transform 0.5s ease-in-out;
+
+   background-color: @color-yellow;
+
+   &.card-back {
+      background-color: @color-darker;
    }
 
-   .card-face.card-front {
+   &.card-front {
       transform: rotateY(180deg);
       /*when start, this is the back*/
    }
 }
 
-/* flipping the card by adding or removing the .visible class on the card */
-.card.visible .card-back {
-   transform: rotateY(-180deg);
+.material-icons {
+   font-size: 96px;
 }
 
-.card.visible .card-front {
-   transform: rotateY(0);
-}
+
+
+
+/*
 
 .card.red .card-face.card-front {
    span {
@@ -304,7 +315,7 @@
       }
    }
 }
-
+*/
 
 @keyframes shake {
    0% {
@@ -320,7 +331,7 @@
    }
 }
 
-@media only screen and (max-width: 630px) {
+@media @mobile {
    #memory {
       #overlays {
          .overlay {

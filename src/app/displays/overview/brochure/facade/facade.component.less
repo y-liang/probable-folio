@@ -1,0 +1,105 @@
+@import '../../../../../assets/styles/variables.less';
+
+
+@media @desktop {
+   .blob-wrapper {
+      width: 100%;
+      display: flex;
+
+      &.blob-above {
+         justify-content: flex-end;
+      }
+
+      &.blob-below {
+         justify-content: space-evenly;
+      }
+
+   }
+
+   .blob-above {
+      svg {
+         width: 300px;
+
+         path {
+            fill: @color-yellow;
+         }
+      }
+   }
+
+   .blob-below {
+      align-items: flex-start;
+
+      svg {
+
+         &:nth-child(1) {
+            width: 180px;
+
+            path {
+               fill: @color-yellow;
+            }
+         }
+
+         &:nth-child(2) {
+            width: 450px;
+
+            path {
+               fill: @color-blurple;
+            }
+         }
+      }
+   }
+
+   #browse-text {
+      font-size: 36px;
+   }
+
+}
+
+@media @mobile {
+
+   .blob-above {
+      svg {
+         width: 150px;
+
+         path {
+            fill: @color-yellow;
+         }
+      }
+   }
+
+   .blob-below {
+      align-items: flex-start;
+
+      svg {
+
+         &:nth-child(1) {
+            width: 90px;
+
+            path {
+               fill: @color-yellow;
+            }
+         }
+
+         &:nth-child(2) {
+            width: 180px;
+
+            path {
+               fill: @color-blurple;
+            }
+         }
+      }
+   }
+
+   #browse-text {
+      font-size: 24px;
+   }
+}
+
+#facade {
+   background-color: @color-green;
+}
+
+
+#browse-text {
+   color: @color-blank;
+}
