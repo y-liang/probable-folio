@@ -10,30 +10,43 @@
 
    .overlay {
       position: absolute;
-      top: 0;
+      top: 5%;
       left: 0;
       bottom: 0;
       right: 0;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      /* for restart text to center */
+      text-align: center;
+
+
       z-index: 1;
-      color: @color-lighter;
-      font-family: @font-title;
-      font-size: 120px;
+
+
       transform: scale(0);
       cursor: default;
    }
 
    .overlay.visible {
       transform: scale(1);
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 224, 167, 0.9);
       transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out 0.3s;
+
+      cursor: pointer;
    }
+
+
 }
+
+.overlay-moment {
+   padding-top: 18%;
+   font-family: @font-title;
+   font-size: 72px;
+
+   color: @color-yellow;
+
+}
+
+
+
 
 #board {
    display: flex;

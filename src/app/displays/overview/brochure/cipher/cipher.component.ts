@@ -107,6 +107,9 @@ export class CipherComponent implements OnInit {
   }
 
   resetOutput() {
+    this.keyFC.reset();
+    this.inputTextFC.reset();
+
     this.outputText = '';
   }
 

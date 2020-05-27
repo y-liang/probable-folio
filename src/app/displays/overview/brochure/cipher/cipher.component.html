@@ -34,10 +34,7 @@
          </div>
       </div>
 
-      <div id="form-buttons">
-         <button type="reset" class="button" (click)="resetOutput()">reset</button>
-         <button type="submit" class="button" [disabled]="mainForm.invalid">{{traTypeFC.value}}</button>
-      </div>
+
 
       <div id="form-inputs">
          <div class="form-input input-group">
@@ -66,6 +63,11 @@
             <textarea formControlName="inputTextFC" id="a-text" class="form-control" required></textarea>
             <span></span>
             <label>enter here a text to {{traTypeFC.value}}</label>
+         </div>
+
+         <div id="form-buttons">
+            <button type="button" class="button" (click)="resetOutput()">reset</button>
+            <button type="submit" class="button" [disabled]="mainForm.invalid">{{traTypeFC.value}}</button>
          </div>
       </div>
 

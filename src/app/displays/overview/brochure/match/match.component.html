@@ -3,8 +3,15 @@
    <div id="overlays">
       <div *ngFor="let overlay of overlays" [ngClass]="{'overlay': true, 'visible': overlay.shown}"
          (click)="toggleOverlay(false, overlay.kind)">
-         <span>{{overlay.kind}}</span>
-         <span *ngIf="overlay.kind != 'start'">restart</span>
+         <div class="overlay-moment">
+            <!-- <span>It's a {{overlay.kind}}!</span> <br><br> -->
+            <span *ngIf="overlay.kind == 'start'">Let's start the game!</span>
+            <span *ngIf="overlay.kind == 'loss'">Game over...</span>
+            <span *ngIf="overlay.kind == 'win'">Well done!</span>
+
+            <br><br>
+            <span *ngIf="overlay.kind != 'start'">Let's restart :)</span>
+         </div>
       </div>
    </div>
 

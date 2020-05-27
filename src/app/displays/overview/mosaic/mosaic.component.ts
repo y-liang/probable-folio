@@ -23,7 +23,7 @@ export class MosaicComponent implements OnInit {
     // console.log(this.currentMode);
 
     this.currentMode = localStorage.getItem('mode') ? localStorage.getItem('mode') : null;
-    this.mode = this.currentMode ? this.currentMode : this.modes[0];
+    this.mode = this.currentMode ? this.currentMode : this.modes[1];
   }
 
   toggleMode() {

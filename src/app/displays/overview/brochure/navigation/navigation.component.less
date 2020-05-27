@@ -5,7 +5,7 @@
    background-color: @color-yellow;
    z-index: 999;
 
-   margin-top: 372px;
+   margin-top: 9%;
 }
 
 
@@ -55,13 +55,15 @@ li.nav-item {
 }
 
 .link-text {
-   display: none;
+   // display: none;
    margin-left: 1rem;
 
    color: @color-darker;
    text-transform: capitalize;
    font-family: @font-title;
    font-size: 24px;
+
+   opacity: 0;
 }
 
 
@@ -71,17 +73,17 @@ li.nav-item {
 @media @desktop {
 
    #navigation {
-      // top: 0;
-      width: 5rem;
-      // height: 100vh;
 
-      transition: width 0.3s ease;
+      width: 5rem;
+      transition: all 0.3s ease;
 
       &:hover {
          width: 15rem;
 
          .link-text {
             display: block;
+            opacity: 1;
+            transition: opacity 0.3s ease 0.3s;
          }
       }
    }
