@@ -5,7 +5,7 @@
   "targets": {
     "probable-folio": {
       "hosting": {
-        "code-folio": [
+        "probable-folio": [
           "probable-folio"
         ]
       }

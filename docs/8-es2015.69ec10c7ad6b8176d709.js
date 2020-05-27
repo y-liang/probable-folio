@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{"5kKW":function(n,o,s){"use strict";s.r(o),s.d(o,"JournalModule",(function(){return u}));class u{}}}]);

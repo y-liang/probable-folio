@@ -10,11 +10,13 @@ const routes: Routes = [
   },
   {
     path: 'resume',
-    loadChildren: () => import(`./displays/brief/brief.module`).then(m => m.BriefModule),
+    // loadChildren: () => import(`./displays/brief/brief.module`).then(m => m.BriefModule),
+    loadChildren: './displays/brief/brief.module#BriefModule'
   },
   {
     path: 'journal',
-    loadChildren: () => import(`./displays/journal/journal.module`).then(m => m.JournalModule),
+    // loadChildren: () => import(`./displays/journal/journal.module`).then(m => m.JournalModule),
+    loadChildren: './displays/journal/journal.module'
   },
   {
     path: 'overview',

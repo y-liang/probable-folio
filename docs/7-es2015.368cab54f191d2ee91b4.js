@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{pLoA:function(n,o,s){"use strict";s.r(o),s.d(o,"BriefModule",(function(){return c}));class c{}}}]);

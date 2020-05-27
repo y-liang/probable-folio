@@ -7,7 +7,8 @@ const routes: Routes = [
     path: '', component: OverviewComponent, children: [
       {
         path: 'sandbox',
-        loadChildren: () => import(`./brochure/brochure.module`).then(m => m.BrochureModule)
+        // loadChildren: () => import(`./brochure/brochure.module`).then(m => m.BrochureModule)
+        loadChildren: './brochure/brochure.module#BrochureModule'
       },
 
 

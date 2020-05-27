@@ -15,8 +15,8 @@
       ]
     },
     {
-      "target": "code-folio",
-      "public": "dist/code-folio",
+      "target": "probable-folio",
+      "public": "dist/probable-folio",
       "ignore": [
         "firebase.json",
         "**/.*",
