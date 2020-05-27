@@ -20,12 +20,12 @@ import { OverviewModule } from './displays/overview/overview.module';
     BrowserAnimationsModule,
     AppRoutingModule,
 
-    SuppliesModule,
+    // SuppliesModule,
 
-    ArchitectureModule,
-    BriefModule,
-    JournalModule,
-    OverviewModule
+    // ArchitectureModule,
+    // BriefModule,
+    // JournalModule,
+    // OverviewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

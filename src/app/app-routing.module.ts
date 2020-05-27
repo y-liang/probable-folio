@@ -5,7 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'architecture',
-    loadChildren: () => import(`./displays/architecture/architecture.module`).then(m => m.ArchitectureModule)
+    // loadChildren: () => import(`./displays/architecture/architecture.module`).then(m => m.ArchitectureModule)
+    loadChildren: './displays/architecture/architecture.module#ArchitectureModule'
   },
   {
     path: 'resume',
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'overview',
-    loadChildren: () => import(`./displays/overview/overview.module`).then(m => m.OverviewModule),
+    // loadChildren: () => import(`./displays/overview/overview.module`).then(m => m.OverviewModule),
+    loadChildren: './displays/overview/overview.module#OverviewModule'
   },
   { path: '', redirectTo: 'overview', pathMatch: 'full' }
 
