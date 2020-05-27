@@ -1,6 +1,9 @@
 @import "../../../../assets/styles/variables.less";
 
-#outro {}
+#outro {
+   background-color: @color-dark;
+}
+
 
 .wave-below {
    svg {
@@ -10,4 +13,62 @@
    }
 
    margin-top: -6px;
+}
+
+
+#contact-button {
+   text-align: center;
+
+   .button {
+      font-size: 36px;
+      border: @color-dark;
+      background-color: @color-yellow;
+      padding: 12px;
+
+
+      &:hover {
+         background-color: @color-dark;
+      }
+
+
+   }
+}
+
+#contact-info {
+   font-size: 16px;
+   font-family: @font-title;
+   color: @color-lighter;
+   text-align: center;
+   padding-bottom: 21px;
+
+}
+
+
+
+#blob-container {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: flex-end;
+
+}
+
+.blob-left {
+   width: 150px;
+
+   svg {
+      path {
+         fill: @color-yellow;
+      }
+   }
+}
+
+.blob-center {
+   width: 450px;
+   // position: absolute;
+
+   svg {
+      path {
+         fill: @color-blurple;
+      }
+   }
 }
