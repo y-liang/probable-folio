@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "probable-folio"
+  },
+  "targets": {
+    "probable-folio": {
+      "hosting": {
+        "code-folio": [
+          "probable-folio"
+        ]
+      }
+    }
   }
 }

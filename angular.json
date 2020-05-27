@@ -141,8 +141,13 @@
               "devServerTarget": "code-folio:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "code-folio"
 }
