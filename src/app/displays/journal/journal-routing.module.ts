@@ -4,7 +4,7 @@ import { JournalComponent } from './journal.component';
 
 
 const routes: Routes = [
-  { path: 'journal', component: JournalComponent }
+  { path: '', component: JournalComponent }
 ];
 
 @NgModule({

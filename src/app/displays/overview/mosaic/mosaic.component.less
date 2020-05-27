@@ -19,16 +19,8 @@
       background-color: @color-darker;
 
       .card {
+         border: 2px solid @color-dark;
          background-color: @color-dark;
-
-
-         &:nth-child(2) {
-            svg {
-               path {
-                  fill: @color-green;
-               }
-            }
-         }
 
          &:nth-child(3) {
             svg {
@@ -49,7 +41,7 @@
    }
 
    &#light {
-      background-color: #ffffff;
+      background-color: @color-lighter;
 
       .card {
          background-color: @color-blank;
@@ -122,9 +114,11 @@
          path {
             fill: @color-blank;
          }
+
       }
 
-      margin-bottom: -9px;
+      margin-top: -6px;
+
    }
 
 
@@ -143,8 +137,10 @@
 .card {
    z-index: 2;
 
-   border: 1px solid @color-blurple;
+   border: 2px solid @color-lighter;
    border-radius: @border-radius;
+
+
 
    transition: transform 0.3s ease;
 
@@ -179,7 +175,7 @@
    &:nth-child(2) {
       svg {
          path {
-            fill: @color-lighter;
+            fill: @color-green;
          }
       }
    }
@@ -216,12 +212,10 @@
 }
 
 .project-description {
-   font-size: 21px;
+   font-size: 24px;
    text-align: center;
    margin: 18px;
    font-family: @font-body;
-
-   font-weight: 600;
 }
 
 
