@@ -21,9 +21,15 @@
 
    .button {
       font-size: 36px;
+      font-weight: lighter;
       border: @color-dark;
       background-color: @color-yellow;
       padding: 12px;
+
+      @media @mobile {
+         font-size: 21px;
+
+      }
 
 
       &:hover {
