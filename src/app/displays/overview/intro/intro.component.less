@@ -1,10 +1,10 @@
 @import "../../../../assets/styles/variables.less";
 
-@line-height-intro: 42px;
-@font-size-intro: 36px;
-@padding-left-intro: 340px;
+@line-height-intro: 72px;
+@font-size-intro: 60px;
+@padding-left-intro: 540px;
 
-@ratio-intro: 0.6;
+@ratio-intro: 0.3;
 
 @media @desktop {
 
@@ -47,6 +47,11 @@
 }
 
 @media @mobile {
+
+   #intro {
+      flex-direction: column;
+   }
+
    #blob-left {
       width: 150px;
    }
@@ -68,7 +73,7 @@
 
       &:after,
       &:before {
-         top: 50px;
+         top: 6vh;
          font-size: @line-height-intro*@ratio-intro;
          line-height: @line-height-intro*@ratio-intro;
       }
@@ -111,13 +116,15 @@
 
 #container {
    position: absolute;
+
    left: 50%;
    transform: translate(-50%, -50%);
    height: 160px;
 
-   color: @color-blurple;
+   color: @color-dark;
 
    font-family: @font-title;
+   font-weight: lighter;
 }
 
 #hello-text {

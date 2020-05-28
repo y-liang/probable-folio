@@ -21,6 +21,15 @@
          border: 2px solid @color-dark;
          background-color: @color-dark;
 
+         &:nth-child(2) {
+            svg {
+
+               path {
+                  fill: @color-blurple;
+               }
+            }
+         }
+
          &:nth-child(3) {
             svg {
                width: 150px;
@@ -106,9 +115,7 @@
    margin: 0 auto;
 
    font-family: @font-title;
-   font-weight: 400;
-   font-size: 36px;
-
+   font-weight: lighter;
 
 }
 
@@ -208,16 +215,19 @@
 
 
 .project-name {
-   font-size: 30px;
+   font-size: 36px;
    margin-bottom: 12px;
    text-transform: capitalize;
+
+   line-height: 1.5;
+
 }
 
 .project-description {
    font-size: 24px;
    text-align: center;
    margin: 18px;
-   font-family: @font-body;
+   line-height: 1.5;
 }
 
 
@@ -230,17 +240,30 @@
       height: 25vh;
       transition: all 0.6s ease;
 
+      grid-template-columns: repeat(2, 1fr);
+
+      grid-gap: 12px;
+
    }
 
    .project-name {
-      font-size: 21px;
+      font-size: 18px;
    }
 
    .project-description {
       display: none;
    }
 
+   .card {
+      &:nth-child(1) {
+         svg {
 
+            width: 90px;
+         }
+      }
+
+
+   }
 
 }
 

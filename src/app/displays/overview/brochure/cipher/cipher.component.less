@@ -10,24 +10,41 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   min-width: 360px;
+   width: 360px;
 
    margin: 36px 0;
    padding: 36px;
 
    background-color: @color-yellow;
    border: 3px solid @color-dark;
+
+   @media @mobile {
+      width: 240px;
+      padding: 30px;
+
+   }
 }
 
 #form-selections {
    display: flex;
+   font-size: 18px;
+
+   @media @mobile {
+      justify-content: center;
+   }
+
 
    .selection {
-      padding: 12px 72px;
+      padding: 12px 36px;
       min-width: 156px;
+
+      text-align: center;
+
+
 
       &:nth-child(1) {
          border-right: 1px dashed @color-dark;
+
       }
 
       .radio {
@@ -48,6 +65,10 @@
 
 #form-inputs {
    margin: 36px auto;
+
+   @media @mobile {
+      margin: 36px 0;
+   }
 
    .form-input {
 
