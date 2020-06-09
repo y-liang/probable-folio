@@ -1,14 +1,10 @@
-@import (css) url(https://fonts.googleapis.com/css?family=Allerta+Stencil|Montserrat|Josefin+Sans:300,400,500,600,700|Muli&display=swap);
+@import (css) url(https://fonts.googleapis.com/css?family=Allerta+Stencil|Montserrat|Josefin+Sans:300,400,500,600,700|Quicksand:400,600|Muli&display=swap);
 
 @desktop: ~"only screen and (min-width: 720px)";
 @mobile: ~"only screen and (max-width: 720px)";
 
-// @desktop: ~"only screen and (min-width: 960px)";
-// @tablet: ~"only screen and (min-width: 720px) and (max-width: 959px)";
-// @mobile: ~"only screen and (max-width: 719px)";
-
-@font-title: "Josefin Sans",
-   "Montserrat",
+@font-title: "Quicksand",
+   "Josefin Sans",
    "Muli",
    "Segoe UI",
    Tahoma,
@@ -29,11 +25,14 @@
 @color-dark: rgb(30, 30, 40);
 @color-darker: rgb(20, 20, 30);
 
-@color-yellower: rgb(255, 166, 0);
+@color-yellower: rgb(255, 188, 63);
 @color-yellow: rgb(255, 208, 26);
 @color-green: rgb(0, 224, 167);
 @color-greener: rgb(40, 104, 89);
 @color-pink: rgb(250, 78, 137);
+
+
+
 
 @padding-page: 10vh 0;
 
@@ -186,6 +185,7 @@
    margin-top: 36px;
    font-size: 24px;
    font-weight: lighter;
+   color: @color-light;
 
    @media @mobile {
       font-size: 18px;

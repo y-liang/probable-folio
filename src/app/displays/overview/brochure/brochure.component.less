@@ -12,11 +12,13 @@
    align-items: center;
    top: 60px;
 
-   background-color: @color-green;
+   padding-top: 90px;
+
+   background-color: @color-darker;
 
    .material-icons {
       font-size: 48px;
-      color: @color-dark;
+      color: @color-blank;
       margin: 0 36px;
 
       @media @mobile {
@@ -25,7 +27,7 @@
 
       &:not(.clickable) {
          cursor: default;
-         color: @color-blank;
+         color: @color-lighter; // middle icons
       }
 
       &.clickable {

@@ -1,8 +1,8 @@
 @import "../../../../assets/styles/variables.less";
 
-@line-height-intro: 120px;
-@font-size-intro: 60px;
-@padding-left-intro: 540px;
+@font-size-intro: 48px;
+@line-height-intro: @font-size-intro*1.5;
+@padding-left-intro: @font-size-intro*10;
 
 @ratio-intro: 0.3;
 
@@ -18,7 +18,7 @@
 
    #container {
 
-      margin-top: 150px;
+      margin-top: 150px; // prevent too close
 
       font-size: @font-size-intro;
       line-height: @line-height-intro;

@@ -21,6 +21,15 @@
          border: 2px solid @color-dark;
          background-color: @color-dark;
 
+         &:nth-child(1) {
+            svg {
+
+               path {
+                  fill: @color-darker;
+               }
+            }
+         }
+
          &:nth-child(2) {
             svg {
 
@@ -32,7 +41,9 @@
 
          &:nth-child(3) {
             svg {
-               width: 150px;
+               path {
+                  fill: @color-darker;
+               }
             }
          }
 
@@ -137,7 +148,7 @@
    &-below {
       svg {
          path {
-            fill: @color-green;
+            fill: @color-darker;
          }
       }
 
@@ -173,10 +184,8 @@
    &:nth-child(1) {
       svg {
 
-         width: 300px;
-
          path {
-            fill: @color-yellow;
+            fill: @color-lighter;
          }
       }
    }
@@ -192,7 +201,7 @@
    &:nth-child(3) {
       svg {
          path {
-            fill: @color-yellow;
+            fill: @color-lighter;
          }
       }
    }

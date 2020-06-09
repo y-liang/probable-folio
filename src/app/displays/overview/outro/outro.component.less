@@ -1,14 +1,14 @@
 @import "../../../../assets/styles/variables.less";
 
 #outro {
-   background-color: @color-dark;
+   background-color: @color-blank;
 }
 
 
 .wave-below {
    svg {
       path {
-         fill: @color-green;
+         fill: @color-darker;
       }
    }
 
@@ -18,13 +18,16 @@
 
 #contact-button {
    text-align: center;
+   margin-bottom: 240px;
 
    .button {
       font-size: 36px;
       font-weight: lighter;
       border: @color-dark;
-      background-color: @color-yellow;
+      background-color: @color-lighter;
       padding: 12px;
+
+      transition: all 0.3s ease;
 
       @media @mobile {
          font-size: 21px;
@@ -33,7 +36,7 @@
 
 
       &:hover {
-         background-color: @color-dark;
+         background-color: @color-yellow;
       }
 
 
@@ -43,7 +46,7 @@
 #contact-info {
    font-size: 16px;
    font-family: @font-title;
-   color: @color-lighter;
+   color: @color-medium;
    text-align: center;
    padding-bottom: 21px;
 
