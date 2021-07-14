@@ -85,18 +85,20 @@
 
 #switch {
    display: flex;
-   flex-direction: row-reverse;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 72px;
 }
 
 #toggle {
    z-index: 2;
 
-   width: 21px;
-   height: 21px;
-   margin: 24px 72px 72px 0;
+   width: 60px;
+   height: 60px;
+   // margin: -180px 120px 120px 0;
 
-   border: 3px solid @color-blurple;
-   background-image: linear-gradient(to right, @color-blurple 50%, @color-yellow 50%);
+   // border: 3px solid @color-dark;
+   background-image: linear-gradient(to right, @color-blank 50%, @color-lighter 50%);
    border-radius: 50%;
 
    transition: all 0.3s linear;
@@ -136,10 +138,10 @@
          path {
             fill: @color-blank;
          }
-
+      height: 24vw;
       }
 
-      margin-top: -6px;
+      margin-top: -90px;
 
    }
 
